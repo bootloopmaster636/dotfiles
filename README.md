@@ -1,7 +1,7 @@
 # dotfiles
 My Linux config files :)
 
-### ℹ️ Info
+### ℹ️ Currently using
 OS        -> Fedora 36 Workstation  
-WM        -> Hyprland WM  
+DE/WM     -> Gnome 42 & Hyprland WM  
 Statusbar -> Polybar  
