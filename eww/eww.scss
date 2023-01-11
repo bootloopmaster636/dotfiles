@@ -1,0 +1,163 @@
+//color vars => catppuccin frappe
+$rosewater: #f2d5cf;
+$flamingo: #eebebe;
+$pink: #f4b8e4;
+$mauve: #ca9ee6;
+$red: #e78284;
+$maroon: #ea999c;
+$peach: #ef9f76;
+$yellow: #e5c890;
+$green: #a6d189;
+$teal: #81c8be;
+$sky: #99d1db;
+$sapphire: #85c1dc;
+$blue: #8caaee;
+$lavender: #babbf1;
+$text: #c6d0f5;
+$subtext1: #b5bfe2;
+$subtext0: #a5adce;
+$overlay2: #949cbb;
+$overlay1: #838ba7;
+$overlay0: #737994;
+$surface2: #626880;
+$surface1: #51576d;
+$surface0: #414559;
+$base: #303446;
+$mantle: #292c3c;
+$crust: #232634;
+
+// start code
+* {
+    font-family: "Ubuntu Nerd Font", sans-serif;
+}
+
+window {
+    background-color: $base;
+}
+
+label {
+    color: $text;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+box.statusbar {
+    background-color: $surface0;
+}
+
+box.clockbar>label.clk {
+    padding-top: 0.5rem;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+box.clockbar>label.cal {
+    margin-top: 0.1rem;
+    padding-bottom: 0.5rem;
+    font-size: 12px;
+}
+
+box.music_playing {
+    background-color: $sapphire;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    border-radius: 0.5rem;
+
+    label {
+        color: $crust;
+        font-size: small;
+    }
+}
+
+box.music_void {
+    background-color: $surface1;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    border-radius: 0.5rem;
+
+    label {
+        color: $text;
+        font-size: small;
+    }
+}
+
+box.batterybar {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-left: 12px;
+
+    circular-progress.bat_graph {
+        background-color: $lavender
+    }
+
+    circular-progress.bat_graph_low {
+        background-color: $red;
+    }
+
+    label.bat_label {
+        font-size: small;
+        margin-left: -20px;
+    }
+}
+
+label.vol_icon {
+    font-size: large;
+    margin-left: 12px;
+}
+
+label.vol_val {
+    margin-left: -20px;
+    font-size: small;
+}
+
+label.brt_icon {
+    font-size: large;
+}
+
+label.brt_val {
+    margin-left: -20px;
+    font-size: small;
+}
+
+box.desktop_num {
+    background-color: $maroon;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    border-top-left-radius: 0.4rem;
+    border-bottom-left-radius: 0.4rem;
+
+    label {
+        color: $crust;
+        font-size: small;
+    }
+}
+
+box.window_title {
+    background-color: $pink;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    border-top-right-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
+
+    label {
+        color: $crust;
+        font-size: small;
+    }
+}
