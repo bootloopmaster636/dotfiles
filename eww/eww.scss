@@ -42,7 +42,8 @@ label {
 }
 
 box.statusbar {
-    background-color: $surface0;
+    background-color: $crust;
+    padding-left: 1rem;
 }
 
 box.clockbar>label.clk {
@@ -58,7 +59,23 @@ box.clockbar>label.cal {
 }
 
 box.music_playing {
-    background-color: $sapphire;
+    background-color: $yellow;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    border-radius: 0.5rem;
+
+    label {
+        color: $mantle;
+        font-size: small;
+    }
+}
+
+box.music_void {
+    background-color: $overlay1;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 
@@ -73,8 +90,8 @@ box.music_playing {
     }
 }
 
-box.music_void {
-    background-color: $surface1;
+box.music_void:focus {
+    background-color: $crust;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 
@@ -84,7 +101,7 @@ box.music_void {
     border-radius: 0.5rem;
 
     label {
-        color: $text;
+        color: $crust;
         font-size: small;
     }
 }
@@ -95,20 +112,31 @@ box.batterybar {
     margin-left: 12px;
 
     circular-progress.bat_graph {
-        background-color: $lavender
+        background-color: $overlay2;
     }
 
     circular-progress.bat_graph_low {
         background-color: $red;
     }
 
+    circular-progress.bat_graph_charging {
+        background-color: $green;
+    }
+
     label.bat_label {
         font-size: small;
-        margin-left: -20px;
+        margin-left: -16px;
     }
 }
 
 label.vol_icon {
+    color: $overlay2;
+    font-size: large;
+    margin-left: 12px;
+}
+
+label.vol_mute {
+    color: $red;
     font-size: large;
     margin-left: 12px;
 }
@@ -119,6 +147,7 @@ label.vol_val {
 }
 
 label.brt_icon {
+    color: $overlay2;
     font-size: large;
 }
 
@@ -127,37 +156,72 @@ label.brt_val {
     font-size: small;
 }
 
-box.desktop_num {
-    background-color: $maroon;
+box.workspace_now {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-
-    border-top-left-radius: 0.4rem;
-    border-bottom-left-radius: 0.4rem;
-
     label {
-        color: $crust;
-        font-size: small;
+            color: $mantle;
+            font-size: small;
+    }
+
+    box.desktop_num {
+        background-color: $maroon;
+
+        border-top-left-radius: 0.4rem;
+        border-bottom-left-radius: 0.4rem;
+    }
+
+    box.window_title {
+        background-color: $flamingo;
+
+    }
+
+    box.float_active_button {
+        background-color: lighten($color: $peach, $amount: 4);
+
+        :hover {
+                background-color: darken($color: $peach, $amount: 12);
+        
+                label {
+                    color: lighten($color: $peach, $amount: 20);
+                }
+            }
+    }
+
+    box.close_active_button {
+        background-color: $peach;
+
+        border-top-right-radius: 0.4rem;
+        border-bottom-right-radius: 0.4rem;
+
+        margin-right: 0.6rem;
+
+        :hover {
+            background-color: darken($color: $red, $amount: 12);
+            border-top-right-radius: 0.4rem;
+            border-bottom-right-radius: 0.4rem;
+
+            label {
+                color: lighten($color: $red, $amount: 20);
+            }
+        }
     }
 }
 
-box.window_title {
-    background-color: $pink;
-    margin-top: 0.5rem;
+box.traybutton {
+    background-color: $base;
+    margin-right: 1.2rem;
     margin-bottom: 0.5rem;
-    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 0.4rem;
 
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-
-    border-top-right-radius: 0.4rem;
-    border-bottom-right-radius: 0.4rem;
-
+    font-size: small;
     label {
-        color: $crust;
-        font-size: small;
+        color: $text;
     }
+
+    // :hover {
+    //     background-color: $surface0;
+    // }
 }

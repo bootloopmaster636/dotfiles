@@ -13,9 +13,22 @@
     :space-evenly false
     :halign "end"
     :spacing -20
+    (traybutton)
     (brightnessbar)
     (volumebar)
     (battery)
+  )
+)
+
+(defwidget traybutton []
+  (eventbox 
+    :onclick "~/Documents/script/script_trayer"
+    (box 
+      :class "traybutton"
+      (label
+        :text ""
+      )
+    )
   )
 )
 
@@ -31,7 +44,7 @@
     :orientation "h"
     :space-evenly true
     (circular-progress
-      :class {bat >= 30 ? "bat_graph" : "bat_graph_low"}
+      :class {is_charging == "charging" ? "bat_graph_charging" : bat >= 30 ? "bat_graph" : "bat_graph_low"}
       :value {100 - bat}
       :thickness 4
       :clockwise false
@@ -52,7 +65,7 @@
       :class "volumebar"
       :space-evenly false
       (label 
-        :class "vol_icon"
+        :class {is_mute != "mute" ? "vol_icon" : "vol_mute"}
         :text {is_mute != "mute" ? "蓼" : "遼"}
         :xalign 0
       )
@@ -66,20 +79,24 @@
 )
 
 (defwidget brightnessbar[]
-  (box
-    :class "brightnessbar"
-    :space-evenly false
-      (label 
-        :class "brt_icon"
-        :text ""
-        :xalign 0
-      )
-      (label 
-        :class "brt_val"
-        :text "${round(brightness / 255 * 100, 0)}"
-        :xalign 0
-      )
+  (eventbox
+    :onscroll "if [ '{}' == 'up' ]; then brightnessctl s +5; else brightnessctl s 5-; fi"
+    (box
+      :class "brightnessbar"
+      :space-evenly false
+        (label 
+          :class "brt_icon"
+          :text ""
+          :xalign 0
+        )
+        (label 
+          :class "brt_val"
+          :text "${round(brightness / 255 * 100, 0)}"
+          :xalign 0
+        )
+    )
   )
+  
 )
 
 (defwidget clockbar[]
@@ -108,7 +125,7 @@
 (defwidget music []
   (box :class {music != "" ? "music_playing" : "music_void"}
     (label
-      :limit-width 28
+      :limit-width 36
       :show-truncated true
       :text {music != "" ? " ${music}" : " Listening to outside world"}
     )
@@ -130,8 +147,28 @@
       (box
         :class "window_title"
         (label
-          :text {window != "" ? "${window}" : "Not doin' anything"}
+          :width 120
+          :xalign 0.5
           :limit-width 28
+          :text {window != "" ? "${window}" : "Not doin' anything"}
+        )
+      )
+      (box
+        :class "float_active_button"
+        (eventbox
+          :onclick "hyprctl dispatch togglefloating active"
+          (label 
+            :text ""
+          )
+        )
+      )
+      (box
+        :class "close_active_button"
+        (eventbox
+        :onclick "hyprctl dispatch killactive \"\""
+          (label
+          :text ""
+          )
         )
       )
     ) 
@@ -174,7 +211,7 @@
 
 (deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace")
 
-(deflisten window :initial "..." "bash ~/.config/eww/scripts/get-window-title")
+(deflisten window :initial "Not doin' anything" "bash ~/.config/eww/scripts/get-window-title")
 
 (defpoll volume :interval "1s"
 "amixer -c 1 -M get Master | grep % | awk {'print $4'} | sed 's/.//;s/%.$//' "
@@ -199,14 +236,18 @@
 (defpoll bat :interval "10s"
 "cat /sys/class/power_supply/BAT1/capacity")
 
+(defpoll is_charging :interval "2s"
+  "upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep state | awk {'print $2'}"
+)
+
 (defwindow bar
   :monitor 0
   :geometry (
     geometry 
       :x "0px"
-      :y "0px"
+      :y "-1px"
     :width "100%"
-    :height "10px"
+    :height "48px"
     :anchor "bottom center"
   )
   :stacking "fg"
