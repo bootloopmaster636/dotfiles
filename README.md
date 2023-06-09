@@ -5,3 +5,5 @@ My Linux config files :)
 OS        -> Arch Linux  
 DE/WM     -> Hyprland WM  
 Statusbar -> EWW
+
+Thanks to all people that made these program :)
