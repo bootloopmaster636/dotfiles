@@ -1,0 +1,28 @@
+{
+    "output": {
+        "blocklist": [],
+        "limiter": {
+            "alr": false,
+            "alr-attack": 5.0,
+            "alr-knee": 0.0,
+            "alr-release": 50.0,
+            "attack": 2.0,
+            "bypass": false,
+            "dithering": "None",
+            "external-sidechain": false,
+            "gain-boost": false,
+            "input-gain": 0.0,
+            "lookahead": 2.0,
+            "mode": "Herm Thin",
+            "output-gain": 0.0,
+            "oversampling": "Full x2(2L)",
+            "release": 5.0,
+            "sidechain-preamp": 0.0,
+            "stereo-link": 100.0,
+            "threshold": -0.7999999999999997
+        },
+        "plugins_order": [
+            "limiter"
+        ]
+    }
+}
