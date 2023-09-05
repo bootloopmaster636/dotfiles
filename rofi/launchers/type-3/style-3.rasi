@@ -24,19 +24,19 @@ window {
     transparency:                "real";
     location:                    center;
     anchor:                      center;
-    fullscreen:                  true;
-    width:                       1366px;
-    height:                      768px;
+    fullscreen:                  false;
+    width:                       env(WIDTH, 100%);
+    height:                      env(HEIGHT, 100%);
     x-offset:                    0px;
     y-offset:                    0px;
 
     enabled:                     true;
     margin:                      0px;
-    padding:                     0px;
+    padding:                     80px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
-    background-color:            black / 10%;
+    background-color:            rgba(68,14,21,0.8);
     cursor:                      "default";
 }
 
@@ -57,7 +57,7 @@ mainbox {
 inputbar {
     enabled:                     true;
     spacing:                     10px;
-    margin:                      0% 28%;
+    margin:                      0% 20%;
     padding:                     10px;
     border:                      1px solid;
     border-radius:               6px;

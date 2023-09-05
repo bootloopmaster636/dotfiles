@@ -1,0 +1,146 @@
+window#waybar {
+  background-color: rgba(61, 44, 21, 0.8);
+}
+
+#clock {
+  background-color: rgba(122, 79, 30, 0.72);
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  margin-right: 0.8rem;
+
+  color: #fbce7a;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+#cava {
+  background-image: linear-gradient(to right, #7a480f, #795a04);
+  color: #f0c569;
+  opacity: 0.86;
+  border-radius: 0.4rem;
+
+  padding-left: 0.6rem;
+  padding-right: 0.5rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+
+  margin-right: 0.8rem;
+}
+
+#mpris {
+  color: #e9c082;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+#taskbar button:hover {
+  background-image: linear-gradient(to right, #53341b, #423419);
+  border-radius: 0.4rem;
+
+  border: 0.1rem;
+  border-style: solid;
+  border-color: #a7823d;
+
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+#taskbar button.active {
+  background-image: linear-gradient(to right, #53341b, #423419);
+  border-radius: 0.4rem;
+
+  border: 0.1rem;
+  border-style: solid;
+  border-color: #a7823d;
+
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+#image.album-art {
+  border: 0.1rem;
+  border-style: solid;
+  border-color: #a7853d;
+  border-radius: 0.1rem;
+
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+#image.pfp {
+  background-color: rgba(22, 15, 9, 0.6);
+
+  padding-left: 1rem;
+}
+
+#custom-profile {
+  background-color: rgba(22, 15, 9, 0.6);
+  color: #f8cca8;
+  font-size: small;
+
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+#tray {
+  background-color: rgba(41, 29, 12, 0.80);
+  color: #e2bc98;
+
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#wireplumber {
+  background-color: rgba(58, 40, 17, 0.86);
+  color: #e2ce98;
+
+  padding-left: 1rem;
+  padding-right: 0.8rem;
+}
+
+#network {
+  background-color: rgba(58, 40, 17, 0.86);
+  color: #e2ce98;
+
+  padding-left: 0.6rem;
+  padding-right: 0.8rem;
+}
+
+#battery {
+  background-color: rgba(58, 40, 17, 0.86);
+  color: #e2ce98;
+
+  padding-left: 0.8rem;
+  padding-right: 1.6rem;
+}
+
+#battery.warning {
+  background-color: rgba(58, 40, 17, 0.86);
+  color: #ebb145;
+
+  padding-left: 0.8rem;
+  padding-right: 1.6rem;
+}
+
+#battery.critical {
+  background-color: rgba(58, 40, 17, 0.86);
+  color: #fd3a6b;
+
+  padding-left: 0.8rem;
+  padding-right: 1.6rem;
+}
+
+#battery.charging {
+  background-color: rgba(58, 40, 17, 0.86);
+  color: #9bcc9d;
+
+  padding-left: 0.8rem;
+  padding-right: 1.6rem;
+}

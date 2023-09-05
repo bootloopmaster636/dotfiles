@@ -179,5 +179,3 @@ configuration {
 	me-accept-custom: "Control+MouseDPrimary";
 */
 }
-//@theme "/usr/share/rofi/themes/android_notification.rasi"
-@theme "/home/chto/.local/share/rofi/themes/rounded-nord-dark.rasi"

@@ -1,227 +1,97 @@
-//color vars => catppuccin frappe
-$rosewater: #f2d5cf;
-$flamingo: #eebebe;
-$pink: #f4b8e4;
-$mauve: #ca9ee6;
-$red: #e78284;
-$maroon: #ea999c;
-$peach: #ef9f76;
-$yellow: #e5c890;
-$green: #a6d189;
-$teal: #81c8be;
-$sky: #99d1db;
-$sapphire: #85c1dc;
-$blue: #8caaee;
-$lavender: #babbf1;
-$text: #c6d0f5;
-$subtext1: #b5bfe2;
-$subtext0: #a5adce;
-$overlay2: #949cbb;
-$overlay1: #838ba7;
-$overlay0: #737994;
-$surface2: #626880;
-$surface1: #51576d;
-$surface0: #414559;
-$base: #303446;
-$mantle: #292c3c;
-$crust: #232634;
-
-// start code
-* {
-    font-family: "Ubuntu Nerd Font", sans-serif;
-}
-
 window {
-    background-color: $base;
+  background-color: rgba(0, 0, 0, 0);
 }
 
-label {
-    color: $text;
-    padding-left: 1rem;
-    padding-right: 1rem;
+box.powermenu {
+  background-color: rgba(43, 28, 12, 0.90);
+
+  border-top-left-radius: 0.8rem;
+  border-bottom-left-radius: 0.8rem;
+
+  min-height: 48rem;
 }
 
-box.statusbar {
-    background-color: $crust;
-    padding-left: 1rem;
+box.header>label{
+  padding-top: 1.8rem;
+  padding-left: 1rem;
+
+  font-size: 2.2rem;
+  font-weight: 400;
+  
+  color: #e9c582;
 }
 
-box.clockbar>label.clk {
-    padding-top: 0.5rem;
-    font-size: 12px;
-    font-weight: 600;
+box.header>.menu_close{
+  margin-top: 2rem;
+  margin-left: 1.6rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+
+  font-size: 1.6rem;
+  font-weight: 400;
+  
+  background-color: #6b562f;
+  color: #e9c582;
+
+  border-radius: 50%;
 }
 
-box.clockbar>label.cal {
-    margin-top: 0.1rem;
-    padding-bottom: 0.5rem;
-    font-size: 12px;
+box.body {
+  margin-left: 1.6rem;
+  padding-right: 2rem;
 }
 
-box.music_playing {
-    background-color: $yellow;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-
-    border-radius: 0.5rem;
-
-    label {
-        color: $mantle;
-        font-size: small;
-    }
+label.batt_capacity {
+  font-size: 3.8rem;
+  font-weight: 600;
+  color: #e9c582;
 }
 
-box.music_void {
-    background-color: $overlay1;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+.batt_prog {
+  trough {
+    border-radius: 1rem;
+    background-color: #52442b;
+    min-height: 0.8rem;
+    min-width: 24rem;
+    border: none;
+    border-style: hidden;
+  }
 
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-
-    border-radius: 0.5rem;
-
-    label {
-        color: $crust;
-        font-size: small;
-    }
+  progress { 
+    border-radius: 1rem;
+    background-color: #e9c582; 
+    min-height: 1rem;
+    border: none;
+    border-style: hidden;
+  }
 }
 
-box.music_void:focus {
-    background-color: $crust;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+label.batt_status {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #e9c582;
 
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-
-    border-radius: 0.5rem;
-
-    label {
-        color: $crust;
-        font-size: small;
-    }
+  padding-top: 0.4rem;
 }
 
-box.batterybar {
-    margin-top: 16px;
-    margin-bottom: 16px;
-    margin-left: 12px;
+label.power_button_title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #e9c582;
 
-    circular-progress.bat_graph {
-        background-color: $overlay2;
-    }
-
-    circular-progress.bat_graph_low {
-        background-color: $red;
-    }
-
-    circular-progress.bat_graph_charging {
-        background-color: $green;
-    }
-
-    label.bat_label {
-        font-size: small;
-        margin-left: -16px;
-    }
+  padding-top: 0.4rem;
 }
 
-label.vol_icon {
-    color: $overlay2;
-    font-size: large;
-    margin-left: 12px;
-}
+button.power_button {
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
 
-label.vol_mute {
-    color: $red;
-    font-size: large;
-    margin-left: 12px;
-}
+  font-size: 1.6rem;
+  font-weight: 400;
+  
+  background-image: linear-gradient(to right, #5a4621, #5a4621);
+  border-style: none;
+  color: #e9c582;
 
-label.vol_val {
-    margin-left: -20px;
-    font-size: small;
-}
-
-label.brt_icon {
-    color: $overlay2;
-    font-size: large;
-}
-
-label.brt_val {
-    margin-left: -20px;
-    font-size: small;
-}
-
-box.workspace_now {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-
-    label {
-            color: $mantle;
-            font-size: small;
-    }
-
-    box.desktop_num {
-        background-color: $maroon;
-
-        border-top-left-radius: 0.4rem;
-        border-bottom-left-radius: 0.4rem;
-    }
-
-    box.window_title {
-        background-color: $flamingo;
-
-    }
-
-    box.float_active_button {
-        background-color: lighten($color: $peach, $amount: 4);
-
-        :hover {
-                background-color: darken($color: $peach, $amount: 12);
-        
-                label {
-                    color: lighten($color: $peach, $amount: 20);
-                }
-            }
-    }
-
-    box.close_active_button {
-        background-color: $peach;
-
-        border-top-right-radius: 0.4rem;
-        border-bottom-right-radius: 0.4rem;
-
-        margin-right: 0.6rem;
-
-        :hover {
-            background-color: darken($color: $red, $amount: 12);
-            border-top-right-radius: 0.4rem;
-            border-bottom-right-radius: 0.4rem;
-
-            label {
-                color: lighten($color: $red, $amount: 20);
-            }
-        }
-    }
-}
-
-box.traybutton {
-    background-color: $base;
-    margin-right: 1.2rem;
-    margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
-    border-radius: 0.4rem;
-
-    font-size: small;
-    label {
-        color: $text;
-    }
-
-    // :hover {
-    //     background-color: $surface0;
-    // }
+  border-radius: 0.8rem;
 }

@@ -1,0 +1,118 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 42,
+
+    // floating style
+    // "margin-top": 4,
+    // "margin-right": 8,
+    // "margin-bottom": 4,
+    // "margin-left": 8,
+
+    "modules-left": ["clock", "cava", "mpris"],
+    "modules-center": ["wlr/taskbar"],
+    "modules-right": ["image#pfp", "custom/profile", "tray","wireplumber", "network", "battery"],
+
+    "cava": {
+        "framerate": 24,
+        "autosens": 1,
+        "bars": 10,
+        "lower_cutoff_freq": 80,
+        "higher_cutoff_freq": 8000,
+        "method": "pipewire",
+        "source": "auto",
+        "stereo": false,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": false,
+        "noise_reduction": 0.2,
+        "input_delay": 1,
+        "ascii_max_range": 8,
+        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+    },
+
+    "mpris": {
+        "format": "󰽴   {title}\n󰠃   {artist}",
+        "format-stopped": "Listening to outside world",
+        "title-len": 32,
+        "artist-len": 24,
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 16,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+    },
+
+    // "hyprland/workspaces": {
+    //     "format": "{icon}",
+    //     "format-icons": {
+    //         "active": "󱗾",
+    //         "default": "󰇘"
+    //     },
+    // },
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+    "hyprland/window": {
+        "format": "{class}",
+    },
+
+    "clock": {
+        "format": "{:%H:%M\n%d %m %Y}",
+    },
+
+
+    "backlight": {
+        "format": "{icon} {percent}% ",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+
+    "battery": {
+        "states": {
+            "good": 100,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip-format": "{capacity}% ({time})",
+        "interval": 10,
+        "on-click": "eww open powermenu && ~/.config/eww/scripts/hyprctl-unfocus.sh && eww update powermenu_opened=true",
+        "on-click-right": "eww update powermenu_opened=false && ~/.config/eww/scripts/hyprctl-focus.sh && sleep 1 && eww close powermenu",
+    },
+
+    "network": {
+        "format-wifi": "",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) --- {ipaddr}",
+        "format-disconnected": "󰕑",
+    },
+
+    "wireplumber": {
+        "format": "󰜟",
+        "format-muted": "󰓄",
+        "tooltip-format": "󰜟 {volume}%",
+        "scroll-step": 2,
+    },
+
+    "image#album-art": {
+        "exec":"~/.config/waybar/scripts/album_art.sh",
+        "size": 32,
+        "interval": 10,  
+    },
+
+    "image#pfp": {
+        "path": "/home/tkg/Pictures/Handmade paintings/idk_profile_picture.png",
+        "size": 26,
+    },
+
+    "custom/profile": {
+        "format": "tkg@chtos-op-calculator"
+    }
+}
+
