@@ -1,0 +1,68 @@
+{
+    "input": {
+        "blocklist": [],
+        "delay#0": {
+            "bypass": true,
+            "dry-l": -100.0,
+            "dry-r": -100.0,
+            "input-gain": 0.0,
+            "invert-phase-l": false,
+            "invert-phase-r": false,
+            "output-gain": 0.0,
+            "time-l": 1000.0,
+            "time-r": 1000.0,
+            "wet-l": 0.0,
+            "wet-r": 0.0
+        },
+        "limiter#0": {
+            "alr": false,
+            "alr-attack": 5.0,
+            "alr-knee": 0.0,
+            "alr-release": 50.0,
+            "attack": 5.0,
+            "bypass": false,
+            "dithering": "None",
+            "external-sidechain": false,
+            "gain-boost": false,
+            "input-gain": 0.0,
+            "lookahead": 5.0,
+            "mode": "Herm Thin",
+            "output-gain": 0.0,
+            "oversampling": "None",
+            "release": 5.0,
+            "sidechain-preamp": 0.0,
+            "stereo-link": 100.0,
+            "threshold": -2.0
+        },
+        "plugins_order": [
+            "rnnoise#0",
+            "speex#0",
+            "delay#0",
+            "limiter#0"
+        ],
+        "rnnoise#0": {
+            "bypass": false,
+            "enable-vad": true,
+            "input-gain": 0.0,
+            "model-name": "",
+            "output-gain": 0.0,
+            "release": 20.0,
+            "vad-thres": 10.0,
+            "wet": -7.979727989493313e-17
+        },
+        "speex#0": {
+            "bypass": false,
+            "enable-agc": true,
+            "enable-denoise": true,
+            "enable-dereverb": false,
+            "input-gain": 0.0,
+            "noise-suppression": -20,
+            "output-gain": 0.0,
+            "vad": {
+                "enable": true,
+                "probability-continue": 28,
+                "probability-start": 20
+            }
+        }
+    }
+}
